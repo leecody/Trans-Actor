@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Timed bleep</title>
+		<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		
+<!-- 		<h3 id="timeLeft">not running</h3> -->
+		
+		<a href="#" id="startTimer">Start Timer</a><br>
+		<a href="#" id="stopTimer">Stop Timer</a>
+		
+		
+		<script>
+			
+			var bleepClock,
+				bleepTime;
+			
+			var bleepCount = 0;
+			var lastRun = 0;
+			var isRunning = false;
+			
+			
+			$('#startTimer').click(function(e){
+				e.preventDefault();
+				runTimer();
+				isRunning = true;
+			});
+			
+			$('#stopTimer').click(function(e){
+				e.preventDefault();
+				stopTimer();
+			});
+			
+			
+			
+			
+			
+			function stopTimer(){
+				
+				clearTimeout(bleepClock);
+				bleepClock = null;
+				
+				isRunning = false;
+				
+			}
+			
+			function runTimer(){
+				
+				doBleep([4, 10], [300, 700], [2, 6]);
+				bleepCount++;
+				
+				bleepTime = randInt(120000, 240000);
+				
+				console.log(bleepTime/60000);
+				bleepClock = setTimeout(function(){
+					runTimer();
+				}, bleepTime);
+			}
+			
+			
+			function updateClock(){
+				
+				var timeLeft = (bleepTime - (millis()-lastRun))/1000;
+				
+				
+				
+			}
+			
+			
+			function doBleep(numBleeps, pitchRange, lengthRange){
+				
+				var numBleeps = randInt(numBleeps[0], numBleeps[1]);
+				var bl = [numBleeps];
+				
+				
+				for(var i = 0; i<numBleeps; i++){
+					var pitch = randInt(pitchRange[0], pitchRange[1]);
+					pitch = (pitch < 200)? 100 : pitch;
+					
+					bl += ','+pitch;
+					bl += ','+((pitch < 200)? 20 : randInt(lengthRange[0], lengthRange[1]));
+				}
+				
+				nodeRequest('bleep', {bleeps: bl, showInterface: "no"});
+			}
+
+
+	
+			function nodeRequest(req, dat){
+				$.ajax({			
+			        type: 'GET',
+					dataType: 'json',
+			        data: dat,
+			        url: req
+			    });
+			}
+			
+			function randInt(min, max) {
+			  return Math.round(Math.random() * (max - min)) + min;
+			}
+		</script>
+	</body>
+</html>

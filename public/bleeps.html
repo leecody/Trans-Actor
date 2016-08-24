@@ -1,0 +1,52 @@
+<!doctype HTML>
+<html>
+  <head>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script src="form.js"></script>
+    <title>
+      Index
+    </title>
+  </head>
+  <body>
+    
+    
+    
+    <form action="/bleep" method="get" >
+	    Manual Input / re-play last bleep<br>
+	   <input id="manual-bleep" type="text" name="bleeps" style="padding: 5px; width: 300px;" value=""><br>
+	   <input type="submit" value="Bleep">
+    </form>
+    
+    <br><br>
+    Number of tones<br><br>
+	<button id="simple-bleep">Simple Task</button><br>
+	<button id="complex-bleep">Complex Task</button><br>
+	<br>
+	<br>
+	Length of each tone<br><br>
+	<button id="easy-bleep">Easy Task</button><br>
+	<button id="difficult-bleep">Difficult Task</button><br>
+	<br>
+	<br>
+	Pitch of each tone<br><br>
+	<button id="homogeneous-bleep">Using few APIs / Databases / Data types</button><br>
+	<button id="heterogeneous-bleep">Using many APIs / Databases / Data types</button><br>
+	<br>
+	<br>
+	<br>
+	<button id="ferror-bleep">Fatal Error during process</button><br>
+	<button id="nferror-bleep">Non-Fatal Error during process</button><br>
+	
+	
+	<br><br><br><br>
+	<button id="random-bleep">Random Bleep</button>
+    
+    
+    
+    <form id="presetBleeps" action="/bleep" method="get" >
+	   <input id="preset-bleeps-value" type="hidden" name="bleeps" value="">
+    </form>
+    
+    
+  </body>
+</html>

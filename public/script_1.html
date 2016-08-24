@@ -1,0 +1,69 @@
+<!doctype HTML>
+<html>
+  <head>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script src="script_1.js"></script>
+    <title>
+      Script 1
+    </title>
+    <style>
+	    .user { color: #ccc; }
+	</style>
+  </head>
+  <body>
+	    
+	<br><br>
+	<button class="sListening">Start Listening</button><br>
+	<span class="user">U: "I want like... a bright color with an appropriate symbolic meaning. Can you give me some suggestions?"</span>
+	
+	<br><br>
+	<button id="speak-1" data-msg="I want like... a bright color with an appropriate symbolic meaning. Can you give me some suggestions?">Response 1</button><br>
+	"Green"
+	
+	<br><br>
+	<button class="sListening">Start Listening</button><br>
+	<span class="user">U: "Really? Why green?"</span>
+	
+	<br><br>
+	<button id="speak-2" data-msg="Really? Why green?">Response 2</button><br>
+	"color symbolism databases: 80% green for ominous scene. Related results: death, decay, non-human monsters."
+	
+	<br><br>
+	<button class="sListening">Start Listening</button><br>
+	<span class="user">U: "yeah, but I just don’t like green for this. What about some color that symbolizes poison in nature? Like poisonous frogs or snakes"</span>
+	
+	<br><br>
+	<button id="speak-3" data-msg="yeah, but I just don’t like green for this. What about some color that symbolizes poison in nature? Like poisonous frogs or snakes">Response 3</button><br>
+	"Yellow and black patterns"
+	
+	<br><br>
+	<button class="sListening">Start Listening</button><br>
+	<span class="user">U: "No, I think I actually want something really evil. Can you give me some evil qualities?"</span>
+	
+	<br><br>
+	<button id="speak-4" data-msg="No, I think I actually want something really evil. Can you give me some evil qualities?">Response 4</button><br>
+	"crime, immorality, corruption, control, —"
+	
+	<br><br>
+	<button class="sListening">Start Listening</button><br>
+	<span class="user">U: Touches the LED, "ok, can we check these against the color symbolism databases, see if anything pops up that way"</span>
+	
+	<br><br>
+	<button id="speak-7" data-msg="ok, can we check these against the color symbolism databases, see if anything pops up that way">Response 7</button><br>
+	"Red"
+	
+
+	<br><br>
+	<button class="sListening">Start Listening</button><br>
+	<span class="user">U:  "yeah… yeah I think that works"</span>
+	
+	<br><br><br><br><br><br>
+	    
+    
+    
+    <form id="presetBleeps" action="/bleep" method="get" >
+	   <input id="preset-bleeps-value" type="hidden" name="bleeps" value="">
+    </form>
+    
+  </body>
+</html>
